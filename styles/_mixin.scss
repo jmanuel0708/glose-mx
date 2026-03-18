@@ -1,0 +1,27 @@
+@mixin tablet {
+    @media screen and (min-width: 46rem) {@content}
+};
+
+@mixin laptop {
+    @media screen and (min-width: 64rem) {@content}
+};
+
+@mixin flexbox(
+    $justify: space-between,
+    $align: center,
+) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+};
+
+@mixin iconProperties() {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: transform 0.1s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+};

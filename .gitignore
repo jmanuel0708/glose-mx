@@ -1,0 +1,105 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno / secretos (no subir nunca)
+.env
+.env.*.local
+.env.local
+.env.production
+.env.production.local
+.env.test
+*.key
+*.pem
+*.crt
+*.p12
+
+# Dependencias / paquetes
+node_modules/
+vendor/          # PHP Composer vendor
+.python-version
+
+# Lockfiles: normalmente conviene commitearlos. QUITA si tu equipo decide lo contrario.
+# package-lock.json
+# yarn.lock
+# composer.lock
+
+# Build / artefactos
+dist/
+build/
+public/build/
+static/dist/
+out/
+release/
+*.tgz
+
+# Frameworks / generados
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+.tmp/
+.sass-cache/
+coverage/
+coverage-html/
+
+# Uploads / archivos de usuario
+uploads/
+public/uploads/
+storage/         # Laravel storage (configúralo si quieres mantener storage/app/public enlazado)
+tmp/
+temp/
+cache/
+
+# Logs / runtime
+logs/
+*.log
+pids/
+*.pid
+*.seed
+
+# IDEs / editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS / misc
+*.swp
+*.swo
+*.bak
+~$*
+
+# Docker / local dev
+.env.docker
+docker-compose.override.yml
+.docker/
+
+# Ruby / Rails
+.bundle/
+log/
+tmp/
+!.keep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+pip-wheel-metadata/
+
+# Composer (PHP)
+composer.phar
+
+# Certificates / keys (extra)
+certs/
+private/
+secrets/
+
+# JetBrains
+*.iml
+.idea/
+
+# Optional: Visual diff / mac helpers
+*.orig

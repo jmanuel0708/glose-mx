@@ -1,0 +1,123 @@
+body {
+  width: 100%;
+  margin: 0;
+  background-color: #f5ede7;
+  font-family: "Montserrat", sans-serif;
+  color: #1a1a1a;
+  font-weight: 400;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+  background-color: #f4f2f3;
+}
+.header__icon {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: transform 0.1s ease;
+}
+.header__icon:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+.header__icon {
+  width: 1.2rem;
+}
+.header__logo {
+  width: 4.75rem;
+  cursor: pointer;
+}
+
+.banner {
+  width: calc(100% - 1rem);
+  box-sizing: border-box;
+  padding: 6.25rem 0;
+  text-align: center;
+  background-image: url(../img/components/banner.png);
+  background-size: cover;
+  background-position: center;
+  color: #D16A9C;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.categories {
+  margin: 2rem 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.categories__track {
+  display: flex;
+  gap: 15px;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 100%;
+  justify-content: center;
+}
+
+@media screen and (min-width: 46rem) {
+  .header__icon {
+    width: 1.25rem;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .header {
+    padding: 0 2.5rem;
+  }
+  .header__icon {
+    width: 1.5rem;
+  }
+  .banner {
+    padding: 10rem 0;
+  }
+}
+.banner__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.8;
+  margin: 1rem;
+  font-family: "Faculty Glyphic", sans-serif;
+}
+.banner__subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.6;
+  font-family: "Montserrat", sans-serif;
+}
+
+.categories__card {
+  width: 9rem;
+  flex: 0 0 9rem;
+  background-color: #faddeb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.categories__card__img {
+  width: 100%;
+}
+.categories__card__title {
+  padding: 1rem;
+  font-family: "Faculty Glyphic", sans-serif;
+  font-size: 1.25rem;
+  text-align: center;
+  align-content: center;
+}
+
+@media screen and (min-width: 46rem) {
+  .banner__title {
+    font-size: 2.5rem;
+    margin: 1rem;
+  }
+  .banner__subtitle {
+    font-size: 1.5rem;
+  }
+  .categories__card {
+    width: 12rem;
+    flex: 0 0 12rem;
+  }
+}/*# sourceMappingURL=main.css.map */
