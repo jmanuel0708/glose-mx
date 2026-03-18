@@ -55,6 +55,8 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 8px 16px 0;
+    transition: all .25s ease;
     
     &__title {
         text-align: center;
