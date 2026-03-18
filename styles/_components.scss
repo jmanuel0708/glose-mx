@@ -51,22 +51,6 @@
         font-weight: 600;
     }
 
-    &__btn {
-        padding: .5rem 0;
-        width: 100%;
-        font-weight: 600;
-        background-color: $glossyPink;
-        color: $white;
-        border: solid $glossyPink 1px;
-        border-radius: $borderRadius;
-        cursor: pointer;
-        transition: all .25s ease;
-
-        &:hover {
-            background-color: $pink;
-        }
-    }
-
     > div {
         padding: 1rem;
         display: flex;
@@ -74,6 +58,57 @@
         gap: .5rem;
         height: 100%;
     }
+}
+
+.cart {
+
+    &__article {
+        padding: 0 .5rem 1.25rem 0;
+        border-bottom: 1px solid #f1f1f1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__img {
+            width: 3.75rem;
+        }
+
+        &__item {
+            text-align: center;
+            font-size: .75rem;
+            width: 7.5rem;
+            font-weight: 500;
+        }
+
+        &__price {
+            font-weight: 500;
+            font-size: .75rem;
+        }
+
+        &__btn {
+            width: 1.5rem;
+            @include iconProperties();
+        }
+    }
+}
+
+.btn {
+    width: 80%;
+    padding: .5rem 0;
+    text-align: center;
+    font-weight: 600;
+    align-self: center;
+    color: $white;
+    background-color: $glossyPink;
+    border: solid $glossyPink 1px;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    transition: all .25s ease;
+
+    &:hover {
+        background-color: $pink;
+    }
+
 }
 
 @include tablet {
