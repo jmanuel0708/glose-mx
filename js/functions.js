@@ -25,8 +25,11 @@ closeCartIcon.addEventListener("click", () => {
 const cartCheckoutBtn = document.querySelector(".cart__btn");
 const addToBag = document.querySelectorAll(".card__btn");
 
+let itemsInCart = 0;
+
 addToBag.forEach(button => {
     button.addEventListener("click", (e) => {
+        itemsInCart += 1;
         const card = e.currentTarget.closest(".card");
 
         const img = card.querySelector(".card__img");
@@ -61,6 +64,7 @@ addToBag.forEach(button => {
         newBtn.setAttribute("alt", "Remove from cart");
         newBtn.addEventListener("click", () => {
             newBtn.parentElement.remove();
+            itemsInCart -=1;
         })
 
         
@@ -72,6 +76,5 @@ addToBag.forEach(button => {
         if (!cart.classList.contains("cart__show")) {
             cart.classList.add("cart__show");   
         }
-
     })
 })
