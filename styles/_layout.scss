@@ -38,19 +38,14 @@ body {
 
 .categories {
     margin: 2rem 1.5rem;
-    
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    
-    &__track {
-        display: flex;
-        gap: 15px;
-        width: max-content;
-        min-width: 100%;
-        justify-content: center;
-    }
+    @include track();
+}
+
+.bestSellers {
+    font-family: $titleFont;
+    font-size: 1.5rem;
+    margin: 1.5rem;
+    @include track();
 }
 
 @include tablet() {

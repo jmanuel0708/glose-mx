@@ -25,3 +25,18 @@
         opacity: 1;
     }
 };
+
+@mixin track() {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    
+    &__track{
+        display: flex;
+        gap: 15px;
+        width: max-content;
+        min-width: 100%;
+        justify-content: center;
+    }
+}
