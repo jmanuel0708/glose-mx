@@ -20,17 +20,6 @@ closeCartIcon.addEventListener("click", () => {
     }
 })
 
-// Remove item from cart
-
-const iconRemove = document.querySelectorAll(".cart__article__btn");
-
-iconRemove.forEach(elem => {
-    elem.addEventListener("click", () => {
-        const elemParent = elem.parentElement;
-        elemParent.remove();
-    })
-})
-
 // Add item to cart
 
 const addToBag = document.querySelectorAll(".card__btn");
@@ -69,11 +58,26 @@ addToBag.forEach(button => {
         newBtn.setAttribute("class", "cart__article__btn");
         newBtn.setAttribute("src","img/icons/trash.svg");
         newBtn.setAttribute("alt", "Remove from cart");
+        newBtn.addEventListener("click", () => {
+            newBtn.parentElement.remove();
+        })
 
         
         newArticleInCart.append(newImg);
         newArticleInCart.append(newTitle);
         newArticleInCart.append(newPrice);
         newArticleInCart.append(newBtn);
+
+    })
+})
+
+// Remove item from cart
+
+const iconRemove = document.querySelectorAll(".cart__article__btn");
+
+iconRemove.forEach(elem => {
+    elem.addEventListener("click", () => {
+        const elemParent = elem.parentElement;
+        elemParent.remove();
     })
 })
