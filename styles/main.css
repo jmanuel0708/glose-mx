@@ -117,6 +117,11 @@ body {
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.card:hover {
+  scale: 1.05;
 }
 .card__img {
   width: 100%;
@@ -142,6 +147,7 @@ body {
   border: solid #f062a6 1px;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 .card__btn:hover {
   background-color: #f095c3;

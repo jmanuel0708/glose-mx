@@ -25,6 +25,12 @@
     overflow: hidden;
     font-family: $mainFont;
     text-align: center;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+
+    &:hover {
+        scale: 1.05;
+    }
 
     &__img {
         width: 100%;
@@ -54,6 +60,7 @@
         border: solid $glossyPink 1px;
         border-radius: $borderRadius;
         cursor: pointer;
+        transition: all .25s ease;
 
         &:hover {
             background-color: $pink;
