@@ -1,13 +1,18 @@
+const showCart = (buttonPressed) => {
+    buttonPressed.addEventListener("click", () => {
+        if (!cart.classList.contains("cart__show")) {
+            cart.classList.add("cart__show");   
+        }
+    })
+}
+
+// Show cart
+
 const closeCartIcon = document.querySelector(".cart__close");
 const cartIcon = document.querySelector(".header__cart")
 const cart = document.querySelector(".cart")
 
-cartIcon.addEventListener("click", () => {
-    
-    if (!cart.classList.contains("cart__show")) {
-        cart.classList.add("cart__show");   
-    }
-})
+showCart(cartIcon)
 
 closeCartIcon.addEventListener("click", () => {
     if (cart.classList.contains("cart__show")) {
@@ -15,7 +20,7 @@ closeCartIcon.addEventListener("click", () => {
     }
 })
 
-//
+// Remove item from cart
 
 const iconRemove = document.querySelectorAll(".cart__article__btn");
 
@@ -25,3 +30,6 @@ iconRemove.forEach(elem => {
         elemParent.remove();
     })
 })
+
+// Add item to cart
+
