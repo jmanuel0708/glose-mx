@@ -22,7 +22,7 @@ closeCartIcon.addEventListener("click", () => {
 
 // Add item to cart
 
-const cartCheckoutBtn = document.querySelector(".cart__btn");
+
 const addToBag = document.querySelectorAll(".card__btn");
 
 let itemsInCart = 0;
@@ -30,6 +30,7 @@ let itemsInCart = 0;
 addToBag.forEach(button => {
     button.addEventListener("click", (e) => {
         itemsInCart += 1;
+        updateCheckoutBtn();
         const card = e.currentTarget.closest(".card");
 
         const img = card.querySelector(".card__img");
@@ -65,6 +66,7 @@ addToBag.forEach(button => {
         newBtn.addEventListener("click", () => {
             newBtn.parentElement.remove();
             itemsInCart -=1;
+            updateCheckoutBtn();
         })
 
         
@@ -77,4 +79,21 @@ addToBag.forEach(button => {
             cart.classList.add("cart__show");   
         }
     })
+
 })
+
+// Checkout Btn
+
+const cartCheckoutBtn = document.querySelector(".cart__btn");
+
+const updateCheckoutBtn = () => {
+    if (itemsInCart < 1) {
+        cartCheckoutBtn.disabled = true;
+        cartCheckoutBtn.classList.add("cart__btn--disabled");
+    } else {
+        cartCheckoutBtn.disabled = false;
+        cartCheckoutBtn.classList.remove("cart__btn--disabled");
+    }
+};
+
+

@@ -116,6 +116,15 @@ body {
 }
 .cart__btn {
   margin: 1.25rem 1rem;
+  cursor: pointer;
+}
+.cart__btn--disabled {
+  background-color: #f062a6;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.cart__btn:not(.cart__btn--disabled):hover {
+  background-color: #f095c3;
 }
 
 @media screen and (min-width: 46rem) {
@@ -186,6 +195,12 @@ body {
   font-size: 1rem;
   font-weight: 600;
 }
+.card__btn {
+  cursor: pointer;
+}
+.card__btn:hover {
+  background-color: #f095c3;
+}
 .card > div {
   padding: 1rem;
   display: flex;
@@ -235,11 +250,7 @@ body {
   background-color: #f062a6;
   border: solid #f062a6 1px;
   border-radius: 0.5rem;
-  cursor: pointer;
   transition: all 0.25s ease;
-}
-.btn:hover {
-  background-color: #f095c3;
 }
 
 @media screen and (min-width: 46rem) {
