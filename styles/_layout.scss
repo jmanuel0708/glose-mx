@@ -77,6 +77,11 @@ body {
             width: 1.25rem;
         }
     }
+
+    .cart {
+        width: 50%;
+        right: 0;
+    }
 }
 
 @include laptop() {
@@ -90,6 +95,11 @@ body {
     
     .banner {
         padding: 10rem 0;
+    }
+
+    .cart {
+        width: 30%;
+        right: 0;
     }
 
 }

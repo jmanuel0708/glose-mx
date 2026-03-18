@@ -102,6 +102,10 @@ body {
   .header__icon {
     width: 1.25rem;
   }
+  .cart {
+    width: 50%;
+    right: 0;
+  }
 }
 @media screen and (min-width: 64rem) {
   .header {
@@ -112,6 +116,10 @@ body {
   }
   .banner {
     padding: 10rem 0;
+  }
+  .cart {
+    width: 30%;
+    right: 0;
   }
 }
 .banner__title {
