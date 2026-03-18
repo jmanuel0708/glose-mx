@@ -22,6 +22,7 @@ closeCartIcon.addEventListener("click", () => {
 
 // Add item to cart
 
+const cartCheckoutBtn = document.querySelector(".cart__btn");
 const addToBag = document.querySelectorAll(".card__btn");
 
 addToBag.forEach(button => {
@@ -39,7 +40,7 @@ addToBag.forEach(button => {
 
         const newArticleInCart = document.createElement("article");
         newArticleInCart.setAttribute("class","cart__article");
-        cart.append(newArticleInCart);
+        cart.insertBefore(newArticleInCart,cartCheckoutBtn);
 
         const newImg = document.createElement("img");
         newImg.setAttribute("class", "cart__article__img");
@@ -72,16 +73,5 @@ addToBag.forEach(button => {
             cart.classList.add("cart__show");   
         }
 
-    })
-})
-
-// Remove item from cart
-
-const iconRemove = document.querySelectorAll(".cart__article__btn");
-
-iconRemove.forEach(elem => {
-    elem.addEventListener("click", () => {
-        const elemParent = elem.parentElement;
-        elemParent.remove();
     })
 })
