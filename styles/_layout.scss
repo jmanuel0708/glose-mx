@@ -1,25 +1,64 @@
 body {
     width: 100%;
+    min-height: 100vh;
     margin: 0;
+    overflow-x: hidden;
     background-color: $beige;
     font-family: $mainFont;
     color: $mainText;
     font-weight: 400;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 .header {
     @include flexbox();
-    padding: 0 2.5rem;
-    background-color: $headerPink;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    min-height: 4.75rem;
+    padding: 0 1.25rem;
+    background-color: rgba(244, 242, 243, 0.92);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.05);
 
     &__icon {
         @include iconProperties;
-        width: 1.2rem;
+        width: 1.25rem;
+        padding: 0.7rem;
+        border-radius: 999px;
+        background-color: rgba(255, 255, 255, 0.45);
+        border: 1px solid rgba(26, 26, 26, 0.05);
+
+        &:hover {
+            background-color: rgba(250, 221, 235, 0.85);
+        }
     }
 
     &__logo {
         width: 4.75rem;
         cursor: pointer;
+        display: block;
+    }
+}
+
+.panelOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background: $overlay;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.28s ease, visibility 0.28s ease;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -48,44 +87,159 @@ body {
     @include track();
 }
 
-.cart {
-    position: absolute;
-    background-color: $white;
-    top: 4.75rem;
-    width: 100%;
-    flex-direction: column;
-    box-shadow: 0 8px 16px 0;
-    transition: all 0.5s ease;
-    display: flex;
-    visibility: hidden;
-    opacity: 0;
-    
+.menu {
+    @extend %panelBase;
+    top: 5.5rem;
+    left: 0.75rem;
+    width: min(18rem, calc(100vw - 1.5rem));
+    padding: 1rem;
+    border-radius: $panelRadius;
+    transform: translateY(-1rem);
 
-    &__show {
+    &.is-open {
         visibility: visible;
         opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
     }
 
-    > div {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 2rem;
-
+    &__header {
+        @include flexbox(space-between, center);
+        margin-bottom: 1rem;
+        padding-bottom: 0.85rem;
+        border-bottom: 1px solid rgba(26, 26, 26, 0.08);
     }
-    
-    &__title {
-        text-align: center;
-        font-size: 1rem;
-        font-weight: 600;
-        padding: 1.25rem 0;
+
+    &__eyebrow {
+        color: $secondaryText;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
     }
 
     &__close {
         @include iconProperties();
+        width: 1rem;
+        padding: 0.55rem;
+        border-radius: 999px;
+        background-color: rgba(244, 242, 243, 0.9);
+        border: 1px solid rgba(26, 26, 26, 0.05);
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: stretch;
+
+        &__item {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.95rem 1rem;
+            border-radius: 1rem;
+            text-decoration: none;
+            color: $mainText;
+            font-weight: 500;
+            font-family: $titleFont;
+            font-size: 1.05rem;
+            background-color: rgba(244, 242, 243, 0.72);
+            transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+
+            &:hover {
+                transform: translateX(0.35rem);
+                background-color: $lightPink;
+                color: #b65384;
+            }
+        }
+    }
+}
+
+.cart {
+    @extend %panelBase;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: min(26rem, calc(100vw - 1.5rem));
+    height: calc(100vh - 1.5rem);
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    transform: translateX(1.5rem);
+
+    &.is-open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+
+    &__header {
+        @include flexbox(space-between, flex-start);
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+    }
+
+    &__eyebrow {
+        color: $secondaryText;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 0.45rem;
+    }
+
+    &__title {
+        text-align: left;
+        font-family: $titleFont;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    &__close {
+        @include iconProperties();
+        width: 1rem;
+        padding: 0.55rem;
+        border-radius: 999px;
+        background-color: rgba(244, 242, 243, 0.9);
+        border: 1px solid rgba(26, 26, 26, 0.05);
+    }
+
+    &__body {
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding-right: 0.25rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(240, 149, 195, 0.6) transparent;
+
+        &::-webkit-scrollbar {
+            width: 0.35rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(240, 149, 195, 0.6);
+            border-radius: 999px;
+        }
+    }
+
+    &__empty {
+        margin: auto 0;
+        padding: 1rem 0;
+        color: $secondaryText;
+        line-height: 1.6;
+    }
+
+    &__footer {
+        padding-top: 1rem;
+        border-top: 1px solid rgba(26, 26, 26, 0.08);
     }
 
     &__btn {
-        margin: 1.25rem 1rem;
+        width: 100%;
+        margin: 0;
         cursor: pointer;
 
         &--disabled {
@@ -102,15 +256,21 @@ body {
 
 @include tablet() {
     .header {
+        padding: 0 1.5rem;
 
         &__icon {
-            width: 1.25rem;
+            width: 1.35rem;
         }
     }
 
+    .menu {
+        left: 1rem;
+        width: 19rem;
+    }
+
     .cart {
-        width: 50%;
-        right: 0;
+        right: 1rem;
+        width: min(28rem, 48vw);
     }
 }
 
@@ -127,9 +287,30 @@ body {
         padding: 10rem 0;
     }
 
-    .cart {
-        width: 30%;
-        right: 0;
+    .menu {
+        left: 1.5rem;
+        width: 20rem;
     }
 
+    .cart {
+        right: 1.5rem;
+        width: min(30rem, 32vw);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .panelOverlay,
+    .menu,
+    .cart,
+    .menu__nav__item,
+    .header__icon,
+    .menu__close,
+    .cart__close,
+    .cart__article,
+    .cart__article__btn,
+    .btn,
+    .card {
+        transition: none;
+        animation: none;
+    }
 }

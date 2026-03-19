@@ -21,19 +21,21 @@
     width: 9rem;
     flex: 0 0 9rem;
     background-color: $lightPink;
-    border-radius: $borderRadius;
+    border-radius: 0.9rem;
     overflow: hidden;
     font-family: $mainFont;
     text-align: center;
     cursor: pointer;
-    transition: all .25s ease-in-out;
+    transition: transform .25s ease, box-shadow .25s ease;
 
     &:hover {
-        scale: 1.05;
+        transform: translateY(-0.35rem);
+        box-shadow: 0 18px 24px rgba(26, 26, 26, 0.08);
     }
 
     &__img {
         width: 100%;
+        display: block;
     }
 
     &__title {
@@ -53,10 +55,6 @@
 
     &__btn {
         cursor: pointer;
-
-        &:hover {
-            background-color: $pink;
-        }
     }
 
     > div {
@@ -68,33 +66,53 @@
     }
 }
 
+@keyframes cartItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .cart {
 
     &__article {
-        padding: 0 .5rem 1.25rem 0;
-        border-bottom: 1px solid #f1f1f1;
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 4.25rem 1fr auto auto;
+        gap: 0.85rem;
         align-items: center;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+        animation: cartItemIn 0.32s ease;
 
         &__img {
-            width: 3.75rem;
+            width: 4.25rem;
+            border-radius: 1rem;
         }
 
         &__item {
-            text-align: center;
-            font-size: .75rem;
-            width: 7.5rem;
+            text-align: left;
+            font-size: 0.78rem;
+            line-height: 1.45;
+            width: auto;
             font-weight: 500;
         }
 
         &__price {
-            font-weight: 500;
-            font-size: .75rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            white-space: nowrap;
         }
 
         &__btn {
-            width: 1.5rem;
+            width: 1.1rem;
+            padding: 0.45rem;
+            border-radius: 999px;
+            background-color: rgba(244, 242, 243, 0.9);
             @include iconProperties();
         }
     }
@@ -102,16 +120,25 @@
 
 .btn {
     width: 80%;
-    padding: .5rem 0;
+    padding: 0.75rem 0;
     text-align: center;
     font-weight: 600;
     align-self: center;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
     color: $white;
     background-color: $glossyPink;
     border: solid $glossyPink 1px;
-    border-radius: $borderRadius;
-    transition: all .25s ease;
+    border-radius: 999px;
+    box-shadow: 0 12px 20px rgba(240, 98, 166, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 
+    &:not(:disabled):hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 24px rgba(240, 98, 166, 0.25);
+        background-color: $pink;
+        border-color: $pink;
+    }
 }
 
 @include tablet {
@@ -130,6 +157,16 @@
     .card {
         width: 12rem;
         flex: 0 0 12rem;
+    }
+
+    .cart {
+        &__article {
+            grid-template-columns: 4.75rem 1fr auto auto;
+
+            &__img {
+                width: 4.75rem;
+            }
+        }
     }
 }
 

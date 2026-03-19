@@ -1,0 +1,17 @@
+%panelBase {
+    position: fixed;
+    z-index: 30;
+    background: rgba(255, 255, 255, 0.92);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    border: 1px solid $panelBorder;
+    box-shadow: $panelShadow;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.28s ease, transform 0.35s cubic-bezier(.22, 1, .36, 1), visibility 0.28s ease;
+}
+
+.is-hidden {
+    display: none;
+}
