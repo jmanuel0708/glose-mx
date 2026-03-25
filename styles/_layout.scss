@@ -105,6 +105,63 @@ body {
     }
 }
 
+.menu {
+    margin: .5rem 1rem;
+    background-color: rgb(251, 251, 251);
+    border-radius: 12px;
+    padding: 1rem;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid rgb(234,234,234);
+
+        &__eyebrow {
+            color: $secondaryText;
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+        }
+
+        &__close {
+            @include iconProperties();
+            border-radius: 50%;
+            background-color: rgb(244, 244, 244);
+            padding: .5rem;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+        padding-bottom: 0;
+        gap: 10px;
+
+        &__item {
+            width: calc(100% - 20px);
+            background-color: rgb(244, 244, 244);
+            padding: .75rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: $titleFont;
+            font-size: 1.125rem;
+            color: $mainText;
+            transition: transform .25s ease, background-color .25s ease;
+
+            &:hover {
+                transform: translateX(6px);
+                background-color: $lightPink;
+                color: $glossyPink;
+            }
+        }
+    }
+}
+
 @include tablet() {
     .header {
 
@@ -116,6 +173,11 @@ body {
     .cart {
         width: 50%;
         right: 0;
+    }
+
+    .menu {
+        width: 30%;
+        left: 0;
     }
 }
 
@@ -134,7 +196,10 @@ body {
 
     .cart {
         width: 30%;
-        right: 0;
+    }
+
+    .menu {
+        width: 20%;
     }
 
 }
