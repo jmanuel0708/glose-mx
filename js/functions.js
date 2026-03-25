@@ -6,6 +6,20 @@ const showCart = (buttonPressed) => {
     })
 }
 
+const showMenu = (buttonPressed) => {
+    buttonPressed.addEventListener("click", () => {
+        if (!menu.classList.contains("cart_show")) {
+            cart.classList.add("cart__show")
+        }
+    })
+}
+
+// Show menu
+
+const closeMenuIcon = document.querySelector(".menu__header__close");
+const menuIcon = document.querySelector(".header__icon");
+const menu = document.querySelector(".menu");
+
 // Show cart
 
 const closeCartIcon = document.querySelector(".cart__close");
