@@ -11,8 +11,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  min-height: 4.75rem;
+  padding: 0 1.25rem;
   background-color: #f4f2f3;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.05);
 }
 .header__icon {
   cursor: pointer;
@@ -24,7 +29,7 @@ body {
   opacity: 1;
 }
 .header__icon {
-  width: 1.2rem;
+  width: 1.25rem;
 }
 .header__logo {
   width: 4.75rem;
@@ -251,6 +256,64 @@ body {
   border: solid #f062a6 1px;
   border-radius: 0.5rem;
   transition: all 0.25s ease;
+}
+
+.menu {
+  margin: 0.5rem 1rem;
+  background-color: rgb(251, 251, 251);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.menu__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+.menu__header__eyebrow {
+  color: #6b6b6b;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.menu__header__close {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: transform 0.1s ease;
+}
+.menu__header__close:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+.menu__header__close {
+  border-radius: 50%;
+  background-color: rgb(244, 244, 244);
+  padding: 0.5rem;
+}
+.menu__nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  padding-bottom: 0;
+  gap: 10px;
+}
+.menu__nav__item {
+  width: calc(100% - 20px);
+  background-color: rgb(244, 244, 244);
+  padding: 0.75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: "Faculty Glyphic", sans-serif;
+  font-size: 1.125rem;
+  color: #1a1a1a;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+.menu__nav__item:hover {
+  transform: translateX(6px);
+  background-color: #faddeb;
+  color: #f062a6;
 }
 
 @media screen and (min-width: 46rem) {
