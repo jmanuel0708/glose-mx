@@ -36,113 +36,6 @@ body {
   cursor: pointer;
 }
 
-.banner {
-  width: calc(100% - 1rem);
-  box-sizing: border-box;
-  padding: 6.25rem 0;
-  text-align: center;
-  background-image: url(../img/components/banner.png);
-  background-size: cover;
-  background-position: center;
-  color: #D16A9C;
-  margin: 0.5rem;
-  border-radius: 0.5rem;
-}
-
-.categories {
-  margin: 2rem 1.5rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-.categories__track {
-  display: flex;
-  gap: 15px;
-  width: -moz-max-content;
-  width: max-content;
-  min-width: 100%;
-  justify-content: center;
-}
-
-.bestSellers {
-  font-family: "Faculty Glyphic", sans-serif;
-  font-size: 1.5rem;
-  margin: 1.5rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-.bestSellers__track {
-  display: flex;
-  gap: 15px;
-  width: -moz-max-content;
-  width: max-content;
-  min-width: 100%;
-  justify-content: center;
-}
-
-.cart {
-  transform: translateX(-110%);
-  margin: 0.5rem 1rem;
-  position: fixed;
-  top: 4.75rem;
-  z-index: 40;
-  background-color: rgb(251, 251, 251);
-  border-radius: 12px;
-  padding: 1rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.3s ease;
-  opacity: 0.25s ease, visibility 0.25s ease;
-}
-.cart__show {
-  transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
-}
-.cart__header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgb(234, 234, 234);
-}
-.cart__header__eyebrow {
-  color: #6b6b6b;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-.cart__header__close {
-  cursor: pointer;
-  opacity: 0.8;
-  transition: transform 0.1s ease;
-}
-.cart__header__close:hover {
-  transform: scale(1.05);
-  opacity: 1;
-}
-.cart__header__close {
-  border-radius: 50%;
-  background-color: rgb(244, 244, 244);
-  padding: 0.5rem;
-}
-.cart__btn {
-  margin: 1.25rem 1rem;
-  cursor: pointer;
-}
-.cart__btn--disabled {
-  background-color: #f062a6;
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.cart__btn:not(.cart__btn--disabled):hover {
-  background-color: #f095c3;
-}
-
 .menu {
   transform: translateX(-110%);
   margin: 0.5rem 1rem;
@@ -212,6 +105,113 @@ body {
   transform: translateX(6px);
   background-color: #faddeb;
   color: #f062a6;
+}
+
+.cart {
+  transform: translateX(-110%);
+  margin: 0.5rem 1rem;
+  position: fixed;
+  top: 4.75rem;
+  z-index: 40;
+  background-color: rgb(251, 251, 251);
+  border-radius: 12px;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease;
+  opacity: 0.25s ease, visibility 0.25s ease;
+}
+.cart__show {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+.cart__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+.cart__header__eyebrow {
+  color: #6b6b6b;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.cart__header__close {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: transform 0.1s ease;
+}
+.cart__header__close:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+.cart__header__close {
+  border-radius: 50%;
+  background-color: rgb(244, 244, 244);
+  padding: 0.5rem;
+}
+.cart__btn {
+  margin: 1.25rem 1rem;
+  cursor: pointer;
+}
+.cart__btn--disabled {
+  background-color: #f062a6;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.cart__btn:not(.cart__btn--disabled):hover {
+  background-color: #f095c3;
+}
+
+.banner {
+  width: calc(100% - 1rem);
+  box-sizing: border-box;
+  padding: 6.25rem 0;
+  text-align: center;
+  background-image: url(../img/components/banner.png);
+  background-size: cover;
+  background-position: center;
+  color: #D16A9C;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.categories {
+  margin: 2rem 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.categories__track {
+  display: flex;
+  gap: 15px;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 100%;
+  justify-content: center;
+}
+
+.bestSellers {
+  font-family: "Faculty Glyphic", sans-serif;
+  font-size: 1.5rem;
+  margin: 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.bestSellers__track {
+  display: flex;
+  gap: 15px;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 100%;
+  justify-content: center;
 }
 
 .panelOverlay {
