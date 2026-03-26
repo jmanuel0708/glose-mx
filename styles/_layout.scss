@@ -109,13 +109,35 @@ body {
     @include menuAndCart(right,110%);
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 5.75rem);
-    overflow-x: hidden;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    height: calc(100vh - 5.75rem);
+    overflow: hidden;
+    
+    > section {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
+    }
+    
+    
+
+
+    &__articles {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &__header {
+        flex-shrink: 0;
+    }
 
     &__btn {
+        flex-shrink: 0;
         margin: 1.25rem 1rem;
         cursor: pointer;
 

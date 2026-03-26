@@ -204,13 +204,29 @@ body {
 .cart {
   display: flex;
   flex-direction: column;
-  max-height: calc(100vh - 5.75rem);
-  overflow-x: hidden;
+  justify-content: flex-start;
+  height: calc(100vh - 5.75rem);
+  overflow: hidden;
+}
+.cart > section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+.cart__articles {
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
+.cart__header {
+  flex-shrink: 0;
+}
 .cart__btn {
+  flex-shrink: 0;
   margin: 1.25rem 1rem;
   cursor: pointer;
 }
