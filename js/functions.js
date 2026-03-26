@@ -139,5 +139,3 @@ const updateCheckoutBtn = () => {
         cartCheckoutBtn.classList.remove("cart__btn--disabled");
     }
 };
-
-
