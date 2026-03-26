@@ -66,6 +66,7 @@ body {
     pointer-events: none;
     transition: opacity 0.25s ease, visibility .25s ease;
     z-index: 30;
+    backdrop-filter: blur(3px);
 
     &__show {
         opacity: 1;

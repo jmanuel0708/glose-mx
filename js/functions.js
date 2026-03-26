@@ -56,9 +56,22 @@ closeCartIcon.addEventListener("click", () => {
 })
 
 
-// Show Overlay
+// Show and Hide Overlay
 
 const overlay = document.querySelector(".panelOverlay");
+
+const hideOverlay = (elementClicked) => {
+    elementClicked.addEventListener("click", () => {
+        overlay.classList.remove("panelOverlay__show");
+        if (cart.classList.contains("cart__show")) {
+            cart.classList.remove("cart__show");
+        } else if (menu.classList.contains("menu__show")) {
+            menu.classList.remove("menu__show");
+        }
+    })
+}
+
+hideOverlay(overlay)
 
 // Add item to cart
 
