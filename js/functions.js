@@ -131,7 +131,8 @@ addToBag.forEach(button => {
         newArticleInCart.append(newBtn);
 
         if (!cart.classList.contains("cart__show")) {
-            cart.classList.add("cart__show");   
+            cart.classList.add("cart__show");
+            overlay.classList.add("panelOverlay__show");
         }
     })
 
