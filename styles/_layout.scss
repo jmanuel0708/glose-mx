@@ -60,6 +60,8 @@ body {
 
 .cart {
     @include menuAndCart(right,110%);
+    display: flex;
+    flex-direction: column;
 
     &__btn {
         margin: 1.25rem 1rem;

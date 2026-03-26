@@ -154,6 +154,10 @@ body {
   background-color: rgb(244, 244, 244);
   padding: 0.5rem;
 }
+.cart {
+  display: flex;
+  flex-direction: column;
+}
 .cart__btn {
   margin: 1.25rem 1rem;
   cursor: pointer;
