@@ -124,6 +124,11 @@ const itemsInCartHTML = document.querySelector(".header__cartCount");
 
 const updateItemsInCart = () => {
     itemsInCartHTML.textContent = itemsInCart;
+    if (itemsInCart < 1) {
+        itemsInCartHTML.classList.remove("header__cartCount__show");
+    } else if (!itemsInCartHTML.classList.contains("header__cartCount__show")) {
+        itemsInCartHTML.classList.add("header__cartCount__show")
+    }
 }
 
 // Checkout Btn

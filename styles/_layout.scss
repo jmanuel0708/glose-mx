@@ -32,7 +32,6 @@ body {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-
     }
 
     &__cartCount {
@@ -50,6 +49,11 @@ body {
         align-items: center;
         justify-content: center;
         line-height: 1;
+        visibility: hidden;
+
+        &__show {
+            visibility: visible;
+        }
     }
 }
 

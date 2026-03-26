@@ -56,6 +56,10 @@ body {
   align-items: center;
   justify-content: center;
   line-height: 1;
+  visibility: hidden;
+}
+.header__cartCount__show {
+  visibility: visible;
 }
 
 .menu {
