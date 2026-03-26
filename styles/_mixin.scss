@@ -41,8 +41,29 @@
     }
 }
 
-@mixin menuAndCartHeader {
-    display: flex;
+@mixin menuAndCart($position, $translate) {
+    $position: 0;
+    transform: translateX($translate);
+    margin: .5rem 1rem;
+    position: fixed;
+    top: 4.75rem;
+    z-index: 40;
+    background-color: rgb(251, 251, 251);
+    border-radius: 12px;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .3s ease;
+    opacity: .25s ease, visibility .25s ease;
+
+    &__show {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__header {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -62,4 +83,5 @@
             background-color: rgb(244, 244, 244);
             padding: .5rem;
         }
+    }
 }

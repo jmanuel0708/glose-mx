@@ -84,15 +84,14 @@ body {
 }
 
 .cart {
+  transform: translateX(-110%);
   margin: 0.5rem 1rem;
   position: fixed;
   top: 4.75rem;
-  right: 0;
   z-index: 40;
   background-color: rgb(251, 251, 251);
   border-radius: 12px;
   padding: 1rem;
-  transform: translateX(-110%);
   opacity: 0;
   visibility: hidden;
   transition: transform 0.3s ease;
@@ -145,15 +144,14 @@ body {
 }
 
 .menu {
+  transform: translateX(-110%);
   margin: 0.5rem 1rem;
   position: fixed;
   top: 4.75rem;
-  left: 0;
   z-index: 40;
   background-color: rgb(251, 251, 251);
   border-radius: 12px;
   padding: 1rem;
-  transform: translateX(-110%);
   opacity: 0;
   visibility: hidden;
   transition: transform 0.3s ease;

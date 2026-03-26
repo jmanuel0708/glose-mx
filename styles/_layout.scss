@@ -54,33 +54,7 @@ body {
 }
 
 .cart {
-    margin: .5rem 1rem;
-    position: fixed;
-    top: 4.75rem;
-    right: 0;
-    z-index: 40;
-    background-color: rgb(251, 251, 251);
-    border-radius: 12px;
-    padding: 1rem;
-
-    // Hide cart
-    transform: translateX(-110%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform .3s ease;
-    opacity: .25s ease, visibility .25s ease;
-
-    &__show {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    &__header {
-        @include menuAndCartHeader();
-    }
-    
-    
+    @include menuAndCart(right,-110%);
 
     &__btn {
         margin: 1.25rem 1rem;
@@ -99,31 +73,7 @@ body {
 }
 
 .menu {
-    margin: .5rem 1rem;
-    position: fixed;
-    top: 4.75rem;
-    left: 0;
-    z-index: 40;
-    background-color: rgb(251, 251, 251);
-    border-radius: 12px;
-    padding: 1rem;
-
-    // Hide menu
-    transform: translateX(-110%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform .3s ease;
-    opacity: .25s ease, visibility .25s ease;
-
-    &__show {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    &__header {
-        @include menuAndCartHeader();
-    }
+    @include menuAndCart(left,-110%);
 
     &__nav {
         display: flex;
