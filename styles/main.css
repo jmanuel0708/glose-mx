@@ -137,7 +137,7 @@ body {
 }
 .menu__nav__item {
   width: calc(100% - 20px);
-  background-color: rgb(244, 244, 244);
+  background-color: #f4f2f3;
   padding: 0.75rem;
   border-radius: 10px;
   text-decoration: none;
@@ -256,7 +256,7 @@ body {
   background-image: url(../img/components/banner.png);
   background-size: cover;
   background-position: center;
-  color: #D16A9C;
+  color: #d16a9c;
   margin: 0.5rem;
   border-radius: 0.5rem;
 }

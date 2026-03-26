@@ -15,7 +15,7 @@ body {
     min-height: 4.75rem;
     padding: 0 1.25rem;
     background-color: $headerPink;
-    border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+    border-bottom: 1px solid $softDarkBorder;
 
     &__icon {
         @include iconProperties;
@@ -60,7 +60,7 @@ body {
 .panelOverlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: $overlayDark;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -87,7 +87,7 @@ body {
 
         &__item {
             width: calc(100% - 20px);
-            background-color: rgb(244, 244, 244);
+            background-color: $headerPink;
             padding: .75rem;
             border-radius: 10px;
             text-decoration: none;
@@ -127,7 +127,7 @@ body {
 
     &__article {
         padding: 1.25rem .5rem 1.25rem 0;
-        border-bottom: 1px solid #f1f1f1;
+        border-bottom: 1px solid $lightBorder;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -163,7 +163,7 @@ body {
     background-image: url(../img/components/banner.png);
     background-size: cover;
     background-position: center;
-    color: #D16A9C;
+    color: $bannerText;
     margin: .5rem;
     border-radius: $borderRadius;
 
