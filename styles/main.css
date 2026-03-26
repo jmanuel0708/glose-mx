@@ -204,6 +204,11 @@ body {
 .cart {
   display: flex;
   flex-direction: column;
+  max-height: calc(100vh - 5.75rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 .cart__btn {
   margin: 1.25rem 1rem;
