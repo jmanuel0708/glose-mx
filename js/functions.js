@@ -9,6 +9,10 @@ const showMenu = (buttonPressed) => {
         if (!menu.classList.contains("menu__show")) {
             menu.classList.add("menu__show")
             overlay.classList.add("panelOverlay__show");
+
+            if (cart.classList.contains("cart__show")) {
+                cart.classList.remove("cart__show");
+            }
         }
     })
 }
@@ -33,7 +37,11 @@ const showCart = (buttonPressed) => {
     buttonPressed.addEventListener("click", () => {
         if (!cart.classList.contains("cart__show")) {
             cart.classList.add("cart__show");
-            overlay.classList.add("panelOverlay__show");   
+            overlay.classList.add("panelOverlay__show");
+            
+            if (menu.classList.contains("menu__show")) {
+                menu.classList.remove("menu__show");
+            }
         }
     })
 }
@@ -43,7 +51,7 @@ showCart(cartIcon);
 closeCartIcon.addEventListener("click", () => {
     if (cart.classList.contains("cart__show")) {
         cart.classList.remove("cart__show");
-        overlay.classList.remove("panelOverlay__show")
+        overlay.classList.remove("panelOverlay__show");
     }
 })
 
