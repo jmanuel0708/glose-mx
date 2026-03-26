@@ -77,6 +77,7 @@ hideOverlay(overlay)
 
 
 const addToBag = document.querySelectorAll(".card__btn");
+const articlesContainer = document.querySelector(".cart__articles")
 
 let itemsInCart = 0;
 
@@ -98,7 +99,7 @@ addToBag.forEach(button => {
 
         const newArticleInCart = document.createElement("article");
         newArticleInCart.setAttribute("class","cart__article");
-        cart.insertBefore(newArticleInCart,cartCheckoutBtn);
+        articlesContainer.appendChild(newArticleInCart);
 
         const newImg = document.createElement("img");
         newImg.setAttribute("class", "cart__article__img");
