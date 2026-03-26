@@ -11,7 +11,7 @@
     transition: all .25s ease-in-out;
 
     &:hover {
-        scale: 1.05;
+        transform: translateY(-6px);
     }
 
     &__img {

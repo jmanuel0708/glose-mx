@@ -328,7 +328,7 @@ body {
   transition: all 0.25s ease-in-out;
 }
 .card:hover {
-  scale: 1.05;
+  transform: translateY(-6px);
 }
 .card__img {
   width: 100%;
