@@ -1,26 +1,3 @@
-// Show Cart
-
-const closeCartIcon = document.querySelector(".cart__close");
-const cartIcon = document.querySelector(".header__cart")
-const cart = document.querySelector(".cart")
-
-const showCart = (buttonPressed) => {
-    buttonPressed.addEventListener("click", () => {
-        if (!cart.classList.contains("cart__show")) {
-            cart.classList.add("cart__show");   
-        }
-    })
-}
-
-showCart(cartIcon);
-
-closeCartIcon.addEventListener("click", () => {
-    if (cart.classList.contains("cart__show")) {
-        cart.classList.remove("cart__show");
-    }
-})
-
-
 // Show Menu
 
 const showMenu = (buttonPressed) => {
@@ -42,6 +19,30 @@ closeMenuIcon.addEventListener("click", () => {
         menu.classList.remove("menu__show");
     }
 })
+
+
+// Show Cart
+
+const closeCartIcon = document.querySelector(".cart__header__close");
+const cartIcon = document.querySelector(".header__cart")
+const cart = document.querySelector(".cart")
+
+const showCart = (buttonPressed) => {
+    buttonPressed.addEventListener("click", () => {
+        if (!cart.classList.contains("cart__show")) {
+            cart.classList.add("cart__show");   
+        }
+    })
+}
+
+showCart(cartIcon);
+
+closeCartIcon.addEventListener("click", () => {
+    if (cart.classList.contains("cart__show")) {
+        cart.classList.remove("cart__show");
+    }
+})
+
 
 // const showOverlay = () => {
     
