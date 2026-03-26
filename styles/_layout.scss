@@ -59,7 +59,7 @@ body {
 }
 
 .cart {
-    @include menuAndCart(right,-110%);
+    @include menuAndCart(right,110%);
 
     &__btn {
         margin: 1.25rem 1rem;

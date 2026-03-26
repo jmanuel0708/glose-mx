@@ -108,7 +108,7 @@ body {
 }
 
 .cart {
-  transform: translateX(-110%);
+  transform: translateX(110%);
   margin: 0.5rem 1rem;
   position: fixed;
   top: 4.75rem;
