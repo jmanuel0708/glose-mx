@@ -120,6 +120,8 @@ addToBag.forEach(button => {
 
 })
 
+// Item Counter in Cart
+
 const itemsInCartHTML = document.querySelector(".header__cartCount");
 
 const updateItemsInCart = () => {
