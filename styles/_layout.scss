@@ -107,9 +107,26 @@ body {
 
 .menu {
     margin: .5rem 1rem;
+    position: fixed;
+    top: 4.75rem;
+    left: 0;
+    z-index: 40;
     background-color: rgb(251, 251, 251);
     border-radius: 12px;
     padding: 1rem;
+
+    // Hide menu
+    transform: translateX(-110%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .3s ease;
+    opacity: .25s ease, visibility .25s ease;
+
+    &__show {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
 
     &__header {
         display: flex;
@@ -124,7 +141,6 @@ body {
             font-size: .75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-
         }
 
         &__close {
@@ -159,6 +175,23 @@ body {
                 color: $glossyPink;
             }
         }
+    }
+}
+
+.panelOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility .25s ease;
+    z-index: 30;
+
+    &--show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 }
 

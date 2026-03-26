@@ -134,9 +134,23 @@ body {
 
 .menu {
   margin: 0.5rem 1rem;
+  position: fixed;
+  top: 4.75rem;
+  left: 0;
+  z-index: 40;
   background-color: rgb(251, 251, 251);
   border-radius: 12px;
   padding: 1rem;
+  transform: translateX(-110%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease;
+  opacity: 0.25s ease, visibility 0.25s ease;
+}
+.menu__show {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
 }
 .menu__header {
   display: flex;
@@ -188,6 +202,22 @@ body {
   transform: translateX(6px);
   background-color: #faddeb;
   color: #f062a6;
+}
+
+.panelOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 30;
+}
+.panelOverlay--show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 @media screen and (min-width: 46rem) {

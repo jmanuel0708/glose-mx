@@ -1,3 +1,9 @@
+// Show Cart
+
+const closeCartIcon = document.querySelector(".cart__close");
+const cartIcon = document.querySelector(".header__cart")
+const cart = document.querySelector(".cart")
+
 const showCart = (buttonPressed) => {
     buttonPressed.addEventListener("click", () => {
         if (!cart.classList.contains("cart__show")) {
@@ -6,33 +12,48 @@ const showCart = (buttonPressed) => {
     })
 }
 
-const showMenu = (buttonPressed) => {
-    buttonPressed.addEventListener("click", () => {
-        if (!menu.classList.contains("cart_show")) {
-            cart.classList.add("cart__show")
-        }
-    })
-}
-
-// Show menu
-
-const closeMenuIcon = document.querySelector(".menu__header__close");
-const menuIcon = document.querySelector(".header__icon");
-const menu = document.querySelector(".menu");
-
-// Show cart
-
-const closeCartIcon = document.querySelector(".cart__close");
-const cartIcon = document.querySelector(".header__cart")
-const cart = document.querySelector(".cart")
-
-showCart(cartIcon)
+showCart(cartIcon);
 
 closeCartIcon.addEventListener("click", () => {
     if (cart.classList.contains("cart__show")) {
         cart.classList.remove("cart__show");
     }
 })
+
+
+// Show Menu
+
+const showMenu = (buttonPressed) => {
+    buttonPressed.addEventListener("click", () => {
+        if (!menu.classList.contains("menu__show")) {
+            menu.classList.add("menu__show")
+        }
+    })
+}
+
+const closeMenuIcon = document.querySelector(".menu__header__close");
+const menuIcon = document.querySelector(".header__icon");
+const menu = document.querySelector(".menu");
+
+showMenu(menuIcon);
+
+closeMenuIcon.addEventListener("click", () => {
+    if (menu.classList.contains("menu__show")) {
+        menu.classList.remove("menu__show");
+    }
+})
+
+// const showOverlay = () => {
+    
+// }
+
+// // Show overlay
+
+// const overlay = document.querySelector(".panelOverlay");
+
+// Show menu
+
+
 
 // Add item to cart
 
