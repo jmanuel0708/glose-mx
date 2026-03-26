@@ -217,36 +217,6 @@ body {
 .cart__btn:not(.cart__btn--disabled):hover {
   background-color: #f095c3;
 }
-.cart__article {
-  padding: 1.25rem 0.5rem 1.25rem 0;
-  border-bottom: 1px solid #f1f1f1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.cart__article__img {
-  width: 3.75rem;
-}
-.cart__article__item {
-  text-align: center;
-  font-size: 0.75rem;
-  width: 7.5rem;
-  font-weight: 500;
-}
-.cart__article__price {
-  font-weight: 500;
-  font-size: 0.75rem;
-}
-.cart__article__btn {
-  width: 1.5rem;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: transform 0.1s ease;
-}
-.cart__article__btn:hover {
-  transform: scale(1.05);
-  opacity: 1;
-}
 
 .banner {
   width: calc(100% - 1rem);
@@ -308,6 +278,43 @@ body {
   justify-content: center;
 }
 
+@media screen and (min-width: 46rem) {
+  .header__icon {
+    width: 1.25rem;
+  }
+  .cart {
+    width: 50%;
+    right: 0;
+  }
+  .menu {
+    width: 30%;
+    left: 0;
+  }
+  .banner__title {
+    font-size: 2.5rem;
+    margin: 1rem;
+  }
+  .banner__subtitle {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .header {
+    padding: 0 2.5rem;
+  }
+  .header__icon {
+    width: 1.5rem;
+  }
+  .banner {
+    padding: 10rem 0;
+  }
+  .cart {
+    width: 30%;
+  }
+  .menu {
+    width: 20%;
+  }
+}
 .card {
   margin: 1rem 0;
   width: 9rem;
@@ -352,6 +359,37 @@ body {
   height: 100%;
 }
 
+.cart__article {
+  padding: 1.25rem 0.5rem 1.25rem 0;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart__article__img {
+  width: 3.75rem;
+}
+.cart__article__item {
+  text-align: center;
+  font-size: 0.75rem;
+  width: 7.5rem;
+  font-weight: 500;
+}
+.cart__article__price {
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+.cart__article__btn {
+  width: 1.5rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: transform 0.1s ease;
+}
+.cart__article__btn:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
 .btn {
   width: 80%;
   padding: 0.5rem 0;
@@ -366,43 +404,8 @@ body {
 }
 
 @media screen and (min-width: 46rem) {
-  .header__icon {
-    width: 1.25rem;
-  }
-  .cart {
-    width: 50%;
-    right: 0;
-  }
-  .menu {
-    width: 30%;
-    left: 0;
-  }
-  .banner__title {
-    font-size: 2.5rem;
-    margin: 1rem;
-  }
-  .banner__subtitle {
-    font-size: 1.5rem;
-  }
   .card {
     width: 12rem;
     flex: 0 0 12rem;
-  }
-}
-@media screen and (min-width: 64rem) {
-  .header {
-    padding: 0 2.5rem;
-  }
-  .header__icon {
-    width: 1.5rem;
-  }
-  .banner {
-    padding: 10rem 0;
-  }
-  .cart {
-    width: 30%;
-  }
-  .menu {
-    width: 20%;
   }
 }/*# sourceMappingURL=main.css.map */

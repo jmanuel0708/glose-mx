@@ -124,35 +124,6 @@ body {
             background-color: $pink;
         }
     }
-
-    &__article {
-        padding: 1.25rem .5rem 1.25rem 0;
-        border-bottom: 1px solid $lightBorder;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        &__img {
-            width: 3.75rem;
-        }
-
-        &__item {
-            text-align: center;
-            font-size: .75rem;
-            width: 7.5rem;
-            font-weight: 500;
-        }
-
-        &__price {
-            font-weight: 500;
-            font-size: .75rem;
-        }
-
-        &__btn {
-            width: 1.5rem;
-            @include iconProperties();
-        }
-    }
 }
 
 .banner {
@@ -195,70 +166,6 @@ body {
     @include track();
 }
 
-.card {
-    margin: 1rem 0;
-    width: 9rem;
-    flex: 0 0 9rem;
-    background-color: $lightPink;
-    border-radius: $borderRadius;
-    overflow: hidden;
-    font-family: $mainFont;
-    text-align: center;
-    cursor: pointer;
-    transition: all .25s ease-in-out;
-
-    &:hover {
-        scale: 1.05;
-    }
-
-    &__img {
-        width: 100%;
-    }
-
-    &__title {
-        font-size: 1.25rem;
-        align-content: center;
-    }
-
-    &__item {
-        font-size: .75rem;
-        min-height: 2.5rem;
-    }
-
-    &__price {
-        font-size: 1rem;
-        font-weight: 600;
-    }
-
-    &__btn {
-        cursor: pointer;
-
-        &:hover {
-            background-color: $pink;
-        }
-    }
-
-    > div {
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
-        height: 100%;
-    }
-}
-
-.btn {
-    width: 80%;
-    padding: .5rem 0;
-    text-align: center;
-    font-weight: 600;
-    align-self: center;
-    color: $white;
-    background-color: $glossyPink;
-    border: solid $glossyPink 1px;
-    border-radius: $borderRadius;
-    transition: all .25s ease;
-}
 
 @include tablet() {
     .header {
@@ -286,11 +193,6 @@ body {
         &__subtitle {
             font-size: 1.5rem;
         }
-    }
-
-    .card {
-        width: 12rem;
-        flex: 0 0 12rem;
     }
 }
 
