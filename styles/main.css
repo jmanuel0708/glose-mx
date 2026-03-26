@@ -62,6 +62,22 @@ body {
   visibility: visible;
 }
 
+.panelOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 30;
+}
+.panelOverlay__show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .menu {
   transform: translateX(-110%);
   margin: 0.5rem 1rem;
@@ -242,22 +258,6 @@ body {
   width: max-content;
   min-width: 100%;
   justify-content: center;
-}
-
-.panelOverlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.35);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-  z-index: 30;
-}
-.panelOverlay--show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
 }
 
 @media screen and (min-width: 46rem) {

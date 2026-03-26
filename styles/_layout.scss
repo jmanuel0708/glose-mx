@@ -57,6 +57,23 @@ body {
     }
 }
 
+.panelOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility .25s ease;
+    z-index: 30;
+
+    &__show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
 .menu {
     @include menuAndCart(left,-110%);
 
@@ -132,23 +149,6 @@ body {
     font-size: 1.5rem;
     margin: 1.5rem;
     @include track();
-}
-
-.panelOverlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.25s ease, visibility .25s ease;
-    z-index: 30;
-
-    &--show {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
 }
 
 @include tablet() {
