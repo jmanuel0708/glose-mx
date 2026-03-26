@@ -35,6 +35,28 @@ body {
   width: 4.75rem;
   cursor: pointer;
 }
+.header__cartWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__cartCount {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #f062a6;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
 
 .menu {
   transform: translateX(-110%);

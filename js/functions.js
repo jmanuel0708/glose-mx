@@ -67,6 +67,7 @@ addToBag.forEach(button => {
     button.addEventListener("click", (e) => {
         itemsInCart += 1;
         updateCheckoutBtn();
+        updateItemsInCart();
         const card = e.currentTarget.closest(".card");
 
         const img = card.querySelector(".card__img");
@@ -103,6 +104,7 @@ addToBag.forEach(button => {
             newBtn.parentElement.remove();
             itemsInCart -=1;
             updateCheckoutBtn();
+            updateItemsInCart();
         })
 
         
@@ -117,6 +119,12 @@ addToBag.forEach(button => {
     })
 
 })
+
+const itemsInCartHTML = document.querySelector(".header__cartCount");
+
+const updateItemsInCart = () => {
+    itemsInCartHTML.textContent = itemsInCart;
+}
 
 // Checkout Btn
 
